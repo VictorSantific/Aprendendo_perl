@@ -1,0 +1,202 @@
+#!/system/bin/perl
+
+# sempre inciar com essas linhas:
+use strict;
+use warnings;
+use feature 'say'; #isso pula linha automaticamente.
+
+# usando say no programa:
+
+say ("Isso é um exemplo de quebra de linha");
+
+#Diferenças das aspas no perl:
+
+print('Olá mundo!\n'); # esse tipo não criar uma nova linha e \n não é reconhecido.
+print("\n");
+print("Olá mundo!\n"); # esse tipo de aspas criar uma nova linha
+
+#impressão de numeros:
+print(12345678910);
+print("\n");
+
+#entrada e saida de dados em perl:
+
+use strict;
+use warnings;
+use feature 'say';
+
+print "Digite o seu nome: ";
+my $nome = <STDIN>; # Lê o que o usuário digitou
+
+chomp($nome);       # Remove o \n do final da string
+
+say "Prazer em conhecê-lo, $nome!";
+
+
+#Criando variaveis em perl:
+
+my $name = "Victor Santific";
+my $idade = 23;
+
+#impressão das variaveis:
+
+print("Meu nome é $name,E tenho  $idade anos. \n");
+
+#criando um array de caracteres:
+
+my @vetor = ("Texto1","Texto2","Texto3","Texto4");
+#id 0    id = 1  id = 2   id = 3
+
+#acesso aos indereços:
+print("acessando posição zero e mostrando conteudo em binario:\n",$vetor[0],"\n");
+#mostrando conteudo normal:
+print("Mostrando conteudo da posição zero de forma legivel:",$vetor [0],"\n");
+#Acesso a um conteudo:
+print("Pegando um dado unico de um array:",$vetor [$#vetor],"\n");
+#obter valores multiplos ou unicos de uma matrix:
+
+print("Criando uma matriz de vetores:\n");
+
+my @conjunto = (1,2,3,4,5); #matriz de conjunto de vetores.
+
+print("Pegando o valor do 0 até 1:",$conjunto[0],"\n");
+print("Pegando o valor do 0 até 2:",@conjunto[0,1],"\n");
+print("Pegando o valor do 0 até 3:",@conjunto[0,1,2],"\n");
+print("Pegando o valor do 0 até 4:",@conjunto[0,1,2,3],"\n");
+print("pegando o valor do 0 até 5:",@conjunto[0,1,2,3,4],"\n");
+
+# use $ para pegar um unico valor e @ para pegar varios valores.
+
+#Criando hashes:
+
+my %colors = ( maca => "red", windows => "blue", noite => "black");
+#Como acessar o itens do hash:
+print("acessando um hash isolado:",$colors{maca},"\n");
+
+#mostrando os endereços com múltiplos valores:
+my @Paleta = @colors{"maca","windows","noite"};
+
+print("Mostrando o id 1:",$Paleta[0],"\n");
+print("Mostrando o id 2:",$Paleta[1],"\n");
+print("Mostrando o id 3:",$Paleta[2],"\n");
+print("\n");
+
+#acessando via key e value:
+
+my @Keyacess = keys %colors;
+my @Keycess = values %colors;
+my $Quantidade = keys %colors;
+
+print @Keyacess,"\n";
+print @Keycess,"\n";
+print "Quantidade: ",$Quantidade,"\n"; #mostra a quantidade.
+
+#Criando um sistema de condição padrão:
+
+my $var;
+my $var2;
+my $soma;
+
+$var = 1;
+$var2 = 1;
+
+$soma = $var + $var2;
+
+if ($soma == 2){
+
+print("Resultado da soma:",$soma,"\n");
+
+} else {
+
+print("Resultado é falso!");
+}
+
+#Criando uma repetição em while e for:
+
+my $z;
+
+for ($z = 0;$z < 10;$z++){
+
+print("Z sendo repetindo no for\n");
+
+}
+
+my $w;
+$w = 0;
+
+while ($w < 10){
+
+$w++;
+
+print("w repetindo no while\n");
+}
+print("\n");
+
+# Tipo de operadores:
+
+# - + * / %
+# == <= >= !=
+
+# Comparador de strings:
+
+# eq  igualdade
+# ne  desigualdade
+# lt  menor que.
+# gt  maior que.
+# le  menor ou igual.
+# ge  maior ou igual.
+
+# Operadores logicos:
+
+#&&  os dois precisam ser verdadeiros.
+#||  um ou outro deve ser verdadeiro.
+#!   flasificar uma verdade.
+
+#Variados:
+
+# =   assignment
+# .   string concatenation
+# x   string multiplication (repeats strings)
+# ..  range operator (creates a list of numbers or strings)
+
+# $x += 1; # o mesmo que $x = $x + 1 
+#$x -= 1; # o mesmo que $x = $x - 1 
+#$x .= "\n"; # o mesmo que $x = $x . "\n";
+
+#Lidando com arquivos:
+
+#Comandos para ler e escrever monitorar a saida de dados no arquivo:
+
+# open(my $in ,"<","like.txt") or die "Não foi possivel abrir o arquivo.$!";
+# open(my $out ,">","like.txt") or die "Não foi possivel abrir o arquivo.$!";
+# open(my $log ,">>","like.txt") or die "Não foi possivel abrir o arquivo.$!"
+
+#lendo arquivo:
+
+# my @line = <$in>;
+# my @lines = <$in>;
+
+#recomendo por dentro do while:
+
+# while (<$in>){
+#    print "Just read in this line: $_";
+# }
+
+#Expressão regulares em perl:
+
+.                   a single character
+\s                  a whitespace character (space, tab, newline, ...)
+\S                  non-whitespace character
+\d                  a digit (0-9)
+\D                  a non-digit
+\w                  a word character (a-z, A-Z, 0-9, _)
+\W                  a non-word character
+[aeiou]             matches a single character in the given set
+[^aeiou]            matches a single character outside the given
+                    set
+(foo|bar|baz)       matches any of the alternatives specified
+
+^                   start of string
+$                   end of string
+
+#
