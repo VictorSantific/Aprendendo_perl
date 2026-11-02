@@ -130,6 +130,10 @@ $w++;
 
 print("w repetindo no while\n");
 }
+
+# Dica extra para repetição:
+use last; para interroper um lopp.
+
 print("\n");
 
 # Tipo de operadores:
